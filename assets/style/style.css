@@ -1,0 +1,370 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+  
+}
+
+
+
+
+/* gradient patern on page as  well as copyright text nested in footer */
+#footer {
+
+    background-image: linear-gradient(rgb(46, 46, 46), rgb(126, 126, 126), rgb(197, 197, 197), rgba(197, 197, 197, .05), rgba(197, 197, 197, .000001));
+    text-align: center;
+    height: 3vw;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* background mountian range images */
+#range {
+    width: 100%;
+    opacity: 1;
+    margin-bottom: 100px;
+    z-index: -5;
+    height: auto;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* used to stretch the background gradient that is applied on loading the weather data */
+#begin,
+#sub-zero,
+#freezing,
+#sub-fofi,
+#sub-fifi,
+#sub-sifi,
+#sub-sefi,
+#sub-eifi,
+#sub-nifi,
+#too-hot,
+.body {
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    height: 100%;
+    width: 100%;
+    min-height: 1200px;
+}
+
+/* container for weather search params */
+#weather-checker {
+    margin-top: -40px;
+    position: relative;
+    margin-left: -50px;
+
+}
+
+/* weather search paramiters below */
+#location {
+    background: #fff;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    opacity: .8;
+    overflow: hidden;
+    width: 54%;
+    padding-left: 20px;
+
+}
+
+/* check weather button */
+#getWeather {
+    font-size: 10px;
+    margin-top: 10px;
+    margin-right: -200px;
+    opacity: .85;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 40%;
+    height: 30px;
+    outline: none;
+    box-shadow: 12px 12px 15px rgb(0, 0, 0, .4)
+
+}
+
+/* rules to allow the button for weather to give feedback on click */
+#getWeather:active {
+    background-color: azure;
+    box-shadow: inset 5px 5px 48px black;
+    cursor: grabbing;
+    height: auto;
+    outline: none;
+    width: 39.5%;
+    
+}
+
+/* rules to allow the weather button to give feedback when it has been clicked before anything else is clicked */
+#getWeather:focus {
+    outline: none;
+    cursor: grabbing;
+    box-shadow: 5px 5px 8px black;
+
+}
+/* applys the grap curser notifying the user this is something they can click */
+#getWeather:hover {
+    cursor: grab;
+}
+
+
+/* direction input filesd */
+.directions-control {
+    width: 45vw;
+    /* max-width: 550px; */
+    max-height: 200px;
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, .5);
+    margin-left: -60px;
+    right: 0;
+    border-radius: 25px;
+
+}
+
+.mapboxgl-canvas {
+    cursor: move;
+    border-radius: 3vw;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+}
+
+#map {
+    width: 45vw;
+    height: 100%;
+    margin: auto;
+    z-index: 0;
+}
+
+#map:hover {
+    cursor: move;
+}
+
+#over-map {
+    background-color: transparent;
+    width: 45vw;
+    min-width: 380px;
+    height: 450px;
+    margin: auto;
+    border-radius: 3vw;
+    -webkit-box-shadow: 10px 10px 10px 15px rgba(36, 36, 36, 0.9);
+    box-shadow: 5px 5px 5px 5px rgba(36, 36, 36, 0.9);
+    z-index: -1;
+    left: 50%;
+}
+
+/* the radio buttons  */
+#menu {
+    margin-top: 30px;
+    margin-bottom: 1vw;
+    border-radius: 25px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    width: 45vw;
+
+}
+
+#userInputContainer {
+    width: 45vw;
+    top: -30%;
+    border-radius: 25px;
+    position: relative;
+    padding: 10px;
+    margin: 10px;
+    left: 30%;
+
+}
+
+
+/* route directions that append below everything.  */
+.distance-container {
+    position: absolute;
+    top:10px;
+    left: 10px;
+    z-index: 1;
+    width: 45vw;
+    border-radius: 25px;
+}
+
+/* route directions that append below everything. allows for strict rules if a global paRAM IS MADE GP inidcator "*" */
+.distance-container >* {
+
+    background-color: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 11px;
+    line-height: 18px;
+    display: block;
+    margin: 0;
+    padding: 5px 10px;
+    border-radius: 3px;
+    width: 45vw
+}
+
+
+
+
+/* this moves the "get current weather aaway from the curled edge */
+::placeholder {
+    padding-left: 20%
+}
+#begin{
+    background: linear-gradient(0deg,
+    rgba(0, 0, 0, 0.4),
+    rgba(83, 83, 184, 0.842),
+    rgba(83, 184, 171, 0.568),
+    rgba(213, 255, 222, 0.842),
+    rgba(0, 212, 255, 0.4) 100%);
+}
+/* dynammic background set in JS. Allows the mood of the app to change color on load of geo weather. | Below */
+/* if the weather is below zero degrees make this the background */
+#sub-zero {
+    background: linear-gradient(0deg,
+        rgba(36, 33, 0, .4) 0%,
+        rgba(255, 255, 255, .4) 35%,
+        rgba(113, 189, 203, .4) 100%), ;
+}
+
+/* if the weather is below 35 degrees make this the background */
+#freezing {
+    background: linear-gradient(0deg,
+        rgba(36, 33, 0, .4) 0%,
+        rgba(255, 255, 255, .4) 35%,
+        rgba(121, 173, 157, .4) 100%);
+}
+
+/* if the weather is below 45 degrees make this the background */
+#sub-fofi {
+    background: linear-gradient(0deg,
+        rgba(2, 0, 36, .4) 0%,
+        rgba(9, 9, 121, .4) 35%,
+        rgba(0, 212, 255, 0.4) 100%);
+
+}
+
+/* if the weather is below fifty-five degrees make this the background */
+#sub-fifi {
+    background: linear-gradient(0deg,
+        rgba(36, 33, 0, .4) 0%,
+        rgba(79, 8, 212, .4) 13%,
+        rgba(231, 224, 230, .4) 100%);
+
+}
+
+/* if the weather is below 65 degrees make this the background */
+#sub-sifi {
+    background: linear-gradient(0deg,
+        rgba(36, 33, 0, .4) 0%,
+        rgba(255, 222, 0, .4) 13%,
+        rgba(255, 255, 255, .4) 51%,
+        rgba(0, 255, 235, .4) 100%);
+
+}
+
+/* if the weather is below 75 degrees make this the background */
+#sub-sefi {
+    background: linear-gradient(0deg,
+        rgba(36, 33, 0, .4) 0%,
+        rgba(255, 0, 0, .4) 11%,
+        rgba(255, 158, 0, .4) 40%,
+        rgba(254, 255, 0, .4) 59%,
+        rgba(0, 255, 235, .4) 100%);
+
+}
+
+/* if the weather is below 85 degrees make this the background */
+#sub-eifi {
+    background: linear-gradient(0deg,
+        rgba(36, 33, 0, .4) 0%,
+        rgba(255, 222, 0, .4) 13%,
+        rgba(255, 196, 107, .4) 29%,
+        rgba(255, 255, 255, .4) 51%,
+        rgba(0, 255, 235, .4) 100%);
+
+}
+
+/* if the weather is below 95 degrees make this the background */
+#sub-nifi {
+    background: linear-gradient(0deg,
+        rgba(36, 33, 0, .4) 0%,
+        rgba(255, 222, 0, .4) 13%,
+        rgba(255, 153, 0, .4) 29%,
+        rgba(255, 255, 255, .4) 51%,
+        rgba(149, 255, 227, .4) 100%);
+
+}
+
+/* if the weather is above 95 degrees and beyond degrees make this the background */
+#too-hot {
+    background: rgb(36, 33, 0);
+    background: linear-gradient(0deg,
+        rgba(36, 33, 0, .4) 0%,
+        rgba(255, 0, 0, .4) 13%,
+        rgba(255, 158, 0, .4) 32%,
+        rgba(254, 255, 0, .4) 78%,
+        rgba(255, 255, 255, .4) 100%);
+
+}
+
+/* dynammic background set in JS. sets the mood of the app to change onload of geo weather. | end */
+
+
+
+/* Style for footer ticker below */
+.tickercontainer {
+    /* the outer div with the black border */
+    width: 45vw;
+    height: 45px;
+    margin-left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    margin-top: 15px;
+    overflow: hidden;
+    color: white;
+    background-color: rgba(77, 77, 77, .4);
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.tickercontainer .mask {
+    /* that serves as a mask. so you get a sort of padding both left and right */
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+ul.newsticker {
+
+    position: relative;
+    font: bold 16px Verdana;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+ul.newsticker li {
+    float: left;
+    /* important: display inline gives incorrect results when you check for elem's width */
+    margin: 0;
+    padding-right: 15px;
+    display: inline-block;
+   
+}
+
+
+/* @media only screen and (max-width: ) */
+/* Style for footer ticker above */
