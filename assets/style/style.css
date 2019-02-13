@@ -62,7 +62,7 @@
     position: relative;
     margin-left: -50px;
     object-fit: contain;
-
+    overflow: hidden;
 }
 
 /* weather search paramiters below */
