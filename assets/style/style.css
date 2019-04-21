@@ -16,10 +16,10 @@
     z-index: -1;
 }
 body{
-height: 1200px;
+height: 100vh;
 }
 #mapHandler{
-    margin-top:-250px;
+    margin-top:-1150px;
 }
 /* background mountian range images */
 #range {
